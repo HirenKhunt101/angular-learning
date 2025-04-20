@@ -1,0 +1,42 @@
+<div class="nav-bar flex">
+  @for(t of tabs; track t; let i = $index) {
+  <div class="m-3" (click)="tabChange(i)" style="cursor: pointer">
+    {{ t }}
+  </div>
+  }
+</div>
+
+<div [formGroup]="dataForm" style="margin: 20px">
+  @if(activeTab == 0) {
+  <div formGroupName="profile">
+    <div class="flex">
+      <label for="name">Name: </label>
+      <input type="text" formControlName="name" />
+    </div>
+    <div class="flex">
+      <label for="name">Age: </label>
+      <input type="text" formControlName="age" />
+    </div>
+  </div>
+  } @else if(activeTab == 1) {
+  <div class="flex" formGroupName="interst">
+    <input type="checkbox" value="music" id="music" formControlName="isMusic" />
+    <label for="music"> Music</label>
+    <input type="checkbox" value="dance" id="dance" formControlName="isDance" />
+    <label for="dance"> Dance</label>
+  </div>
+  } @else if(activeTab == 2) {
+  <div>
+    <label>
+      <input type="radio" formControlName="setting" value="male" />
+      Male
+    </label>
+
+    <label>
+      <input type="radio" formControlName="setting" value="female" />
+      Female
+    </label>
+  </div>
+
+  }
+</div>
