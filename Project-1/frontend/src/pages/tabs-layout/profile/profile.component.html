@@ -1,1 +1,11 @@
 <p>profile works!</p>
+<div [formGroup]="profile">
+  <div class="flex">
+    <label for="name">Name: </label>
+    <input type="text" formControlName="name" />
+  </div>
+  <div class="flex">
+    <label for="name">Age: </label>
+    <input type="text" formControlName="age" />
+  </div>
+</div>
