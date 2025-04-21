@@ -1,0 +1,20 @@
+<p>pagination works!</p>
+
+<div class="container">
+  @for(item of productData; track item) { @if(item) {
+  <div class="item">
+    <img [src]="item?.thumbnail" alt="item?.title" height="200" width="240" />
+    <h5>{{ item?.title }}</h5>
+  </div>
+  } }
+</div>
+
+<div class="pagination">
+  <button
+    *ngFor="let page of pages"
+    (click)="getData(page)"
+    [class.active]="page === currentPage"
+  >
+    {{ page }}
+  </button>
+</div>
