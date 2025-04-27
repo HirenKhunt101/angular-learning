@@ -1,10 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ParentComponent } from '../parent/parent.component';
+import { ChildComponent } from '../child/child.component';
+
 
 @Component({
   selector: 'app-pagination',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ParentComponent, ChildComponent],
   templateUrl: './pagination.component.html',
   styleUrl: './pagination.component.css'
 })
